@@ -4,15 +4,15 @@ public:
         if (x < 0)
             return false;
 
-        long long copy = x;
-        long long  reverse = 0;
+        long copy = x;
+        long long reverse = 0;
 
         while (x != 0) {
             reverse = reverse * 10 + (x % 10);
 
-            if (reverse < INT_MIN || reverse > INT_MAX) {
-                return false;
-            }
+            // if (reverse < INT_MIN || reverse > INT_MAX) {
+            //     return false;
+            // }
 
             x /= 10;
         }
