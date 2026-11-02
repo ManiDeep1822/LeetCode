@@ -1,20 +1,22 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x < 0) {
-            return false;
+        if(x < 0) return false;
+
+        int copy = x;
+        long long int reverse = 0;
+
+        while(x != 0) {
+            reverse = reverse * 10 + (x % 10);
+
+            if(reverse < INT_MIN || reverse > INT_MAX) {
+                return false;
+            }
+
+            x /= 10;
         }
 
-        long long int palindrome = 0;
-        int xCopy = x;
-
-        while(xCopy != 0) {
-            long long int remainder = xCopy % 10;
-            palindrome = palindrome * 10 + remainder;
-            xCopy /= 10;
-        }
-
-        if(x != palindrome) {
+        if(reverse != copy) {
             return false;
         }
 
