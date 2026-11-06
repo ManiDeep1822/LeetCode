@@ -42,9 +42,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Two Pointers
 |  |
 | ------- |
+| [0125-valid-palindrome](https://github.com/ManiDeep1822/LeetCode/tree/master/0125-valid-palindrome) |
 | [1385-find-the-distance-value-between-two-arrays](https://github.com/ManiDeep1822/LeetCode/tree/master/1385-find-the-distance-value-between-two-arrays) |
 ## Binary Search
 |  |
 | ------- |
 | [1385-find-the-distance-value-between-two-arrays](https://github.com/ManiDeep1822/LeetCode/tree/master/1385-find-the-distance-value-between-two-arrays) |
+## String
+|  |
+| ------- |
+| [0125-valid-palindrome](https://github.com/ManiDeep1822/LeetCode/tree/master/0125-valid-palindrome) |
 <!---LeetCode Topics End-->
