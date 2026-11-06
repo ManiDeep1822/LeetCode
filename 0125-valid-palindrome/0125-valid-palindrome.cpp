@@ -1,38 +1,36 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        int i = 0;
+        string cleaned_str = "";
 
-        string copy = "";
+        // clean the string: remove special characters, convert to lowercase
+        // manually
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s[i];
 
-        while (i < s.size()) {
-            if (s[i] >= 'A' && s[i] <= 'Z') {
-                int ch = s[i] + 32;
-                copy += ch;
-            } else if (s[i] >= 'a' && s[i] <= 'z') {
-                copy += s[i];
-            } else if (s[i] >= '0' && s[i] <= '9') {
-                copy += s[i];
+            // check if alphabet
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+                if (ch >= 'A' && ch <= 'Z')
+                    ch = ch + 32; // convert uppercase to lowercase manually
+                cleaned_str += ch;
             }
-            i++;
+            // check if digit
+            else if (ch >= '0' && ch <= '9') {
+                cleaned_str += ch;
+            }
         }
 
-        i = 0;
-        int j = copy.size() - 1;
+        int i = 0;
+        int j = cleaned_str.length() - 1;
 
-        int n = copy.size() / 2;
-
-        int flag = true;
-
-        while (i <= n && j >= n) {
-            if (copy[i] != copy[j]) {
-                flag = false;
-                break;
-            }
+        // two-pointer palindrome check
+        while (i < j) {
+            if (cleaned_str[i] != cleaned_str[j])
+                return false;
             i++;
             j--;
         }
 
-        return flag;
+        return true;
     }
 };
